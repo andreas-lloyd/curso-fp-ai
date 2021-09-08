@@ -55,6 +55,8 @@ Un ejemplo seria “explorar los datos” - no hace falta que haga yo una explor
 
 Tambien menciono que es dificil cubrir todos los aspectos de data science, ML y AI en un unico dataset, asi que a veces vamos a introducir limitaciones a lo que podemos hacer simplemente para aprender que hacer un algunas situaciones (por ejemplo, no permitir entrenar un modelo con ciertas variables, etc.)
 
+Sera importante tomar notas durante las clases - algo magico de los "notebooks" es que permiten mezclar markdown y codigo!
+
 ## Requisitos tecnicos
 Vamos a hacer todo el curso en Python, generalmente explotando Jupyter notebooks en Jupyter lab. Yo siempre tiro de Jupyer lab pero una alternativa muy buena es [Google colab](https://colab.research.google.com/) - no hace falta instalar nada y el procesamiento esta en remoto, una ventaja muy grande!
 
