@@ -1,13 +1,6 @@
 # Introducción al curso
 Bienvenidos a mi parte del curso! Vamos a pasar unas cuantas semanas juntos mirando muchos temas relacionados con el mundo de data science, machine learning y inteligencia artificial.
 
-## Quien soy yo?
-Yo soy [Andreas](https://www.linkedin.com/in/andreas-lloyd/) - medio noruego, medio gales y un data scientist profesional desde hace 5 años. Empecé en el mundo de consultoria y luego me he ido al mundo de productos tecnológicos - primero en [Cabify](https://cabify.com/es), luego en [Jeff](https://jeff.com/) y ahora en [Lingokids](https://lingokids.com/).
-
-He trabajado en una gran variedad de proyectos, generalmente orientados hacia consumidores finales (lo que se llama “B2C”), en ámbitos como optimización de precios, fraude, personalización de experiencia de usuario, campañas de fidelidad... 
-
-Lo que más me gusta del mundo de data science es crear productos tecnológicos y crear impacto.
-
 ## Objetivos del curso
 Mi objetivo principal es daros experiencia de como puede ser aplicar los temas teoricos en un problema real.
 
@@ -18,7 +11,7 @@ Más especificamente:
 * Como acercarnos a resolver problemas de negocio con datos
 * Entender a que nos referimos cuando hablamos del concepto de “datos” en problemas de data science y machine learning 
 * Ver el proceso tipico de aprender sobre nuestro problema para conseguir formular el problema de negocio en un problema tecnico
-* Entrenar y evaluar modelos
+* Entrenar y evaluar modelos (más en la segunda parte del año)
 * Mejorar estos modelos de formas sencillas y complejas
 
 ## Qué esperamos conseguir
@@ -26,36 +19,40 @@ Los skills principales que esperamos ganar son:
 
 * Analizar datos
 * Entender datos y resultados en el contexto de un problema de negocio
-* Programacion basica del mundo de data science
+* Programacion basica del mundo de data science y ML
 * Los procesos tipicos de un problema de ML
 
-
 ## Nuestro proyecto
-Vamos a imaginar que trabajamos para una empresa que quiere crecer su base de usuarios (como todos!). Imaginamos tambien que hemos identificado Twitter como un fuente posible de usuarios y queremos explotarlo.
+Vamos a imaginar que trabajamos para una empresa que quiere crecer su base de usuarios. Imaginamos tambien que hemos identificado Twitter como un fuente posible de usuarios y queremos explotarlo.
 
-Hemos visto que la clave es la creación de contenidos buenos y compartirlo sobre tweets populares, pero relevantes a este contenido que hemos creado. Por ejemplo, si Obama habla sobre como el deporte afecta el desarrollo de niños - compartir un articulo que profundiza sobre el tema en los comentarios podria traernos muchos usuarios.
+Hemos visto que la clave es la creación de contenidos buenos (no spam!) y compartirlo sobre tweets populares cuando antes despues de la publicacion del tweet. Por ejemplo, si Obama habla sobre cómo el deporte afecta el desarrollo de niños - compartir un articulo que profundiza sobre este tema en los comentarios podria traernos muchos usuarios.
 
-Ahi la empresa nos ha pedido ayudar en el esfuerzo - queremos entender que tipos de tweets van a ser populares?
+Ahi la empresa nos ha pedido ayuda - cómo podemos predecir los tweets que van a ser populares?
 
-Nos interesan diferentes tipos de tweets sobre diferentes temas. También nos interesa poder compartir nuestro contenido lo más rapido posible - pero estamos limitados por el tiempo que tardamos en crear este contenido bueno, asi que “spamear” no nos vale como estrategia!
-
-Entonces nuestro trabajo es poder proporcionar inteligencia (de alguna forma) sobre que tweets podran llegar a ser “populares” y validos para nuestra estrategia.
+Entonces nuestro trabajo es poder proporcionar inteligencia (de alguna forma) sobre qué tweets podrán llegar a ser “populares” y validos para nuestra estrategia.
 
 * Algunas ideas iniciales de como hacer esto?
 * Como diferenciaria nuestro intento de ayudar con este problema frente a otro tipo de perfil, por ejemplo alguien de marketing o de investigacion qualitativa (sociologia, user experience etc.)?
-* Que datos nos pueden ayudar?
 * Como sabremos que hemos conseguido hacer algo util? 
 
 ## Cómo vamos a hacer las clases
-Quiero que sea todo bastante practico y si es posible, hecho por vosotros sin demasiado ayuda!
+Cada semana / par de semanas trabajaremos en un tema y creare un notebook de “base” que servira como una guia inicial (si hace falta). Durante la clase vamos a ir trabajando en el tema de la semana.
 
-Dicho esto, he estructurado cada semana / par de semanas en tareas generales que tenemos que ir haciendo. Creare un notebook de “base” que ya incluira algunas cosas de la tarea, pero vamos a tratar de ir resolviendo la tarea durante la clase como un conjunto.
-
-Un ejemplo seria “explorar los datos” - no hace falta que haga yo una exploracion enorme antes de la clase, porque podemos ver todo juntos y decidir que mirar - pero dejare trocitos de codigo que podemos utilizar para agilizar el proceso, o por ejemplo aspectos relevantes de los datos que debemos mirar.
+Un ejemplo seria “explorar los datos” - no voy a hacer una exploracion enorme antes de la clase. Dejaré unas pistas y unos trocitos de código que podemos ir utilizando si queremos.
 
 Tambien menciono que es dificil cubrir todos los aspectos de data science, ML y AI en un unico dataset, asi que a veces vamos a introducir limitaciones a lo que podemos hacer simplemente para aprender que hacer un algunas situaciones (por ejemplo, no permitir entrenar un modelo con ciertas variables, etc.)
 
-Sera importante tomar notas durante las clases - algo magico de los "notebooks" es que permiten mezclar markdown y codigo!
+## Evaluación
+En vez de tener un examen, preferimos evaluar un proyecto hecho por vosotros. El proyecto que vamos a evaluar es el mismo que vamos a hacer durante estas clases:
+
+* En la primera mitad del año vamos a llegar a hacer unos modelos de regresion y evaluaremos a todo el trabajo que involucra crear estos modelos (el analisis inicial de los datos, preparacion de los datos, mejora de los datos para el modelo y la misma creacion del modelo)
+* En la segunda mitad profundizaremos más sobre la evaluacion de los modelos y también la creacion de modelos de clasificación - para la evaluacion habrá solape con la primera mitad (todo lo que tiene más que ver con los pasos previos de entrenar un modelo) pero daremos más peso a la parte de evaluación y optimización de los modelos
+
+Lo importante del proyecto NO es crear el mejor modelo de la historia. Lo importante es la ejecuccion del proceso entero, lo que aprendemos sobre el problema durante este proceso y la justificaciones de las decisiones que tomamos.
+
+El último punto es muy importante: hay muchas decisiones que tendremos que tomar y lo importante es justificar bien estas decisiones (no acertarlas siempre). Da un poco igual si utilizamos variable A o variable B, pero es importante razonarlo (usar nuestro sentido común tambien nos vale!).
+
+Este ejercicio es muy similar a lo que acaba siendo la "prueba tecnica" en el proceso de seleccion para trabajos de data science (y relacionados). Puedo compartir unos ejemplos en persona.
 
 ## Requisitos tecnicos
 Vamos a hacer todo el curso en Python, generalmente explotando Jupyter notebooks en Jupyter lab. Yo siempre tiro de Jupyer lab pero una alternativa muy buena es [Google colab](https://colab.research.google.com/) - no hace falta instalar nada y el procesamiento esta en remoto, una ventaja muy grande!
