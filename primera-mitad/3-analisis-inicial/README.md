@@ -76,6 +76,18 @@ graph.draw();
 
 ## Algunas pistas más
 
+### Empezar por lo basico
+Hay unas cosas que casi siempre hay que mirar:
+
+* Las distribuciones de las variables de interes (cuales son de interes?)
+* Como se distribuyen los datos en el tiempo
+
+### Piensa en lo fundamental
+
+* Conceptos que son importantes: la popularidad, los factores que pueden predecir la popularidad (piensa lógicamente - que influye sobre la popularidad?)
+* Variables que pueden ser importantes: likes, replies, followers, following, si tiene videos, si tiene hashtags, día de la publicación...
+* ¿Cuáles son los pasos básicos para preparar los datos? Podemos utilizar variables que tienen muchos outliers? Ahora es buen momento para ir adelantando sobre estas decisiones
+
 ### Estructurando el análisis
 Un aspecto muy difícil de este ejercicio es que es muy abierto y cuando empiezas, parece muy alto nivel. Cómo te organizas es muy importante para conseguir algo bueno, unas pistas:
 
@@ -117,9 +129,3 @@ graph_data = twitter_users.groupby('num_weeks_created').tweets.median().reset_in
 graph = pn.ggplot(graph_data, pn.aes(x='num_weeks_created', y='tweets')) + pn.geom_line() # + pn.xlim(0, 52)
 graph.draw();
 ```
-
-### Piensa en lo fundamental
-
-* Conceptos que son importantes: la popularidad, los factores que pueden predecir la popularidad (piensa lógicamente - que influye sobre la popularidad?)
-* Variables que pueden ser importantes: likes, replies, followers, following, si tiene videos, si tiene hashtags, día de la publicación...
-* ¿Cuáles son los pasos básicos para preparar los datos? Podemos utilizar variables que tienen muchos outliers? Ahora es buen momento para ir adelantando sobre estas decisiones
