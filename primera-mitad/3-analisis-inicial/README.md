@@ -76,11 +76,50 @@ graph.draw();
 
 ## Algunas pistas más
 
-### Estructurando el analisis
-Un aspecto muy dificil de este ejercicio es que es muy abierto y cuando empiezas, parece muy alto nivel. Cómo te organizas es muy importante para conseguir algo bueno, unas pistas:
+### Estructurando el análisis
+Un aspecto muy difícil de este ejercicio es que es muy abierto y cuando empiezas, parece muy alto nivel. Cómo te organizas es muy importante para conseguir algo bueno, unas pistas:
 
-* Estructura tu notebook con las preguntas que quieres contestar - crea varias secciones en tu notebook que tienen como titulo una pregunta, y intenta contestar esta pregunta
-* Empieza por lo más basico - una vez tengas claro que "podria utilizar esto para un modelo simple" puedes ir añadiendo complejidad, pero lo importante es tener una primera version del analisis por lo simple que pueda ser
-* Utilizar el otro fichero de tweets! (`2021-08-11-2021-08-12-2021-08-19-tweets-data.csv`)
-* Conceptos que son importantes: la popularidad, los factores que pueden predecir la popularidad (piensa logicamente - que influye sobre la popularidad?)
-* Variables que pueden ser importantes: likes, replies, followers, following, si tiene videos, si tiene hashtags, dia de la publicacion...
+* Estructura tu notebook con las preguntas que quieres contestar - crea varias secciones en tu notebook que tienen como título una pregunta, y intenta contestar esta pregunta
+* Empieza por lo más básico - una vez tengas claro que "podría utilizar esto para un modelo simple" puedes ir añadiendo complejidad, pero lo importante es tener una primera versión del análisis por lo simple que pueda ser
+
+### Hay más datos!
+El otro fichero (`2021-08-11-2021-08-12-2021-08-19-tweets-data.csv`) contiene los tweets que serán fundamentales para la predicción.
+
+```python
+tweet_data = pd.read_csv(tweet_file)
+
+print(tweet_data.head())
+
+print(tweet_data.nlikes.describe(percentiles=[0.5, 0.6, 0.7, 0.8, 0.9]))
+```
+
+### Utilizar los group by
+¿De donde son la mayoría de los usuarios? ¿Qué días de la semana tienen más tweets? ¿Qué hashtags se utilizan más? 
+
+Preguntas de este estilo solo se pueden contestar tirando del `groupby`. En general agregar los datos también es muy útil para quitar el "ruido" de los datos, por ejemplo:
+
+```python
+twitter_users = pd.read_csv(handles_file)
+
+# Como estan los datos a nivel general?
+print(twitter_users.tweets.describe())
+
+# Depende de cuanto tiempo lleva en la plataforma?
+twitter_users['num_days_created'] = (pd.to_datetime('2022-01-01') - pd.to_datetime(twitter_users.join_date)).dt.days
+
+
+graph = pn.ggplot(twitter_users, pn.aes(x='num_days_created', y='tweets')) + pn.geom_line()
+graph.draw();
+
+twitter_users['num_weeks_created'] = twitter_users.num_days_created // 7
+graph_data = twitter_users.groupby('num_weeks_created').tweets.median().reset_index()
+
+graph = pn.ggplot(graph_data, pn.aes(x='num_weeks_created', y='tweets')) + pn.geom_line() # + pn.xlim(0, 52)
+graph.draw();
+```
+
+### Piensa en lo fundamental
+
+* Conceptos que son importantes: la popularidad, los factores que pueden predecir la popularidad (piensa lógicamente - que influye sobre la popularidad?)
+* Variables que pueden ser importantes: likes, replies, followers, following, si tiene videos, si tiene hashtags, día de la publicación...
+* ¿Cuáles son los pasos básicos para preparar los datos? Podemos utilizar variables que tienen muchos outliers? Ahora es buen momento para ir adelantando sobre estas decisiones
