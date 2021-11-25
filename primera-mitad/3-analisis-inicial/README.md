@@ -73,3 +73,14 @@ print(twitter_users.follower_following_ratio.describe())
 graph = pn.ggplot(twitter_users, pn.aes(x='followers', y='follower_following_ratio')) + pn.geom_line()
 graph.draw();
 ```
+
+## Algunas pistas más
+
+### Estructurando el analisis
+Un aspecto muy dificil de este ejercicio es que es muy abierto y cuando empiezas, parece muy alto nivel. Cómo te organizas es muy importante para conseguir algo bueno, unas pistas:
+
+* Estructura tu notebook con las preguntas que quieres contestar - crea varias secciones en tu notebook que tienen como titulo una pregunta, y intenta contestar esta pregunta
+* Empieza por lo más basico - una vez tengas claro que "podria utilizar esto para un modelo simple" puedes ir añadiendo complejidad, pero lo importante es tener una primera version del analisis por lo simple que pueda ser
+* Utilizar el otro fichero de tweets! (`2021-08-11-2021-08-12-2021-08-19-tweets-data.csv`)
+* Conceptos que son importantes: la popularidad, los factores que pueden predecir la popularidad (piensa logicamente - que influye sobre la popularidad?)
+* Variables que pueden ser importantes: likes, replies, followers, following, si tiene videos, si tiene hashtags, dia de la publicacion...
