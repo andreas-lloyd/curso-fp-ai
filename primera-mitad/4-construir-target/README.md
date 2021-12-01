@@ -7,7 +7,7 @@ Entender bien los candidatos que tenemos para el target y entender cómo constru
 ## Contexto
 El target es fundamental para cualquier problema supervisado de machine learning. Siempre empezamos con un objetivo en mente y el target tiene que reflejar este objetivo. No siempre es obvio cómo hacer esto, pero siempre tenemos que buscar la señal en nuestros datos que refleja la realidad que estamos intentando predecir.
 
-El target también es el dato que mejor tiene que estar preparado, porque va a afectar todo el proceso de modelado.
+El target también es el dato que tiene que estar mejor preparado, porque va a afectar todo el proceso de modelado.
 
 Nota que en la primera mitad del año vamos a centrarnos en la regresión, pero no tenemos que limitarnos a este tipo de problema por ahora.
 
