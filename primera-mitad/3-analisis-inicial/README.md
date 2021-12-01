@@ -129,3 +129,20 @@ graph_data = twitter_users.groupby('num_weeks_created').tweets.median().reset_in
 graph = pn.ggplot(graph_data, pn.aes(x='num_weeks_created', y='tweets')) + pn.geom_line() # + pn.xlim(0, 52)
 graph.draw();
 ```
+
+### ¿Cómo accedo a los campos con listas?
+Algun@s me han preguntado por algunos campos (el hashtag, por ejemplo) que parecen tener listas en la columna. Por ejemplo:
+
+![](images/column-w-list)
+
+Realmente no son listas - son strings. Lo que pasa aquí es que el objeto JSON original tendría una lista que no somos capaces de guardar en el CSV, entonces está convertido en un string que representa los símbolos del string.
+
+Una forma fácil de acceder a los datos de estas "listas" es a través de regex. Podemos extraer en este ejemplo, todos los hashtags así:
+
+```python
+tweet_data.hashtags.str.extractall(r"'([^']+)'")
+```
+A lo mejor hay que jugar un poco con el objeto que sale dependiendo de cómo lo quieres utilizar, pero es relativamente simple.
+
+### ¿Columnas con valores raros?
+Se ha visto que alguna columna tiene valores que no acaban de tener "sentido". En esta fase inicial es muy útil encontrar estos ejemplos porque entrenar un modelo para predecir valores "raros" no suele ser buena idea!
