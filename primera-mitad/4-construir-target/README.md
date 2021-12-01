@@ -53,5 +53,29 @@ graph = (
 )
 graph.draw();
 ```
+Qué pasaria si intentamos una regresion con este target?
 
+Qué otros problemas podemos encontrar?
+
+### Número de likes
+Los likes también parecen interesantes - pero habrán valores extremos?
+
+```python
+tweet_data['dummy'] = 'Número de likes'
+
+graph = (
+pn.ggplot(tweet_data, pn.aes(x='dummy', y='nlikes'))
++ pn.geom_boxplot() + pn.xlab('')
+)
+
+graph.draw();
+
+graph = (
+pn.ggplot(tweet_data, pn.aes(x='nlikes'))
++ pn.geom_density()
+)
+
+graph.draw();
+```
+Cómo podemos interpretar el boxplot?
 
