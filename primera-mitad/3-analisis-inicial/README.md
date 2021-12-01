@@ -133,7 +133,7 @@ graph.draw();
 ### ¿Cómo accedo a los campos con listas?
 Algun@s me han preguntado por algunos campos (el hashtag, por ejemplo) que parecen tener listas en la columna. Por ejemplo:
 
-![](images/column-w-list)
+![](column-w-list)
 
 Realmente no son listas - son strings. Lo que pasa aquí es que el objeto JSON original tendría una lista que no somos capaces de guardar en el CSV, entonces está convertido en un string que representa los símbolos del string.
 
