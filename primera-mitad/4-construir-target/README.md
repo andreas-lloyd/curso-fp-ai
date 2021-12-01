@@ -22,14 +22,14 @@ Nota que en la primera mitad del año vamos a centrarnos en la regresión, pero 
 
 1. Cómo impacta la selección del target sobre el modelo? 
 2. Cómo cambiaría la predicción con las diferentes transformaciones?
-3. Si nuestro target se "comporta mal", como afecta al modelo
+3. Si nuestro target se "comporta mal", cómo afecta al modelo?
 
 ## Que esperamos tener?
-Unos candidatos muy claros para nuestro target, listo para poder analizar correlaciones y variables relevantes.
+Unos candidatos muy claros para nuestro target, listos para poder analizar correlaciones y variables relevantes.
 
 ## Ejemplos para arrancar motores
 
-## Número de replies
+### Número de replies
 Las respuestas pueden ser muy interesantes porque muestra un "engagement" muy fuerte - pero es una variable realmente continua?
 
 ```python
@@ -37,6 +37,19 @@ print((tweet_data.nreplies == 0).mean())
 
 # Y esto que significa?
 print(tweet_data.loc[tweet_data.nreplies == 0, ['nlikes', 'nretweets']].describe())
+
+cats = [-1, 0, 1, 5, 50, 500, 5000, 50000, 500000, tweet_data.nreplies.max() + 99999]
+labels = [bin_lim for bin_lim in cats[1:-1]] + f'More than {cats[-1]}'
+tweet_data['nreplies_cats'] = pd.cut(tweet_data.nreplies, cats, labels=labels, include_lowest=True)
+graph_data = tweet_data.nreplies_cats.value_counts(normalize=True).reset_index()
+
+graph = (
+  pd.ggplot(graph_data, pn.aes(x='index', y='nreplies_cats')) 
+  + pn.geom_col() 
+  + pn.scale_y_continuous(labels=mizani.formatters.percent_format()) 
+  + pn.coord_flip()
+)
+graph.draw();
 ```
 
 
