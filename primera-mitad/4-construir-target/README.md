@@ -41,10 +41,12 @@ print(tweet_data.loc[tweet_data.nreplies == 0, ['nlikes', 'nretweets']].describe
 cats = [-1, 0, 1, 5, 50, 500, 5000, 50000, 500000, tweet_data.nreplies.max() + 99999]
 labels = [bin_lim for bin_lim in cats[1:-1]] + f'More than {cats[-1]}'
 tweet_data['nreplies_cats'] = pd.cut(tweet_data.nreplies, cats, labels=labels, include_lowest=True)
-graph_data = tweet_data.nreplies_cats.value_counts(normalize=True).reset_index()
+
+graph_data = tweet_data.groupby('nreplies_cats').id.nunique().reset_index()
+graph_data['percentage'] = graph_data.id / graph_data.id.sum()
 
 graph = (
-  pd.ggplot(graph_data, pn.aes(x='index', y='nreplies_cats')) 
+  pd.ggplot(graph_data, pn.aes(x='nreplies_cats', y='percentage')) 
   + pn.geom_col() 
   + pn.scale_y_continuous(labels=mizani.formatters.percent_format()) 
   + pn.coord_flip()
