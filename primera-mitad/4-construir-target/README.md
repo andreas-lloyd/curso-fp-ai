@@ -74,3 +74,6 @@ graph.draw();
 ```
 Cómo podemos interpretar el boxplot?
 
+### Un ratio de valores?
+Cómo seria hacer un ratio de likes por followers? Tendria esto sentido? Que problemas puede haber?
+
