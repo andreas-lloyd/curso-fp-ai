@@ -38,17 +38,19 @@ print((tweet_data.nreplies == 0).mean())
 # Y esto que significa?
 print(tweet_data.loc[tweet_data.nreplies == 0, ['nlikes', 'nretweets']].describe())
 
-cats = [-1, 0, 1, 5, 50, 500, 5000, 50000, 500000, tweet_data.nreplies.max() + 99999]
-labels = [bin_lim for bin_lim in cats[1:-1]] + f'More than {cats[-1]}'
+cats = [-1, 0, 1, 5, 50, 500, 5000, 50000, tweet_data.nreplies.max() + 99999]
+labels = [bin_lim for bin_lim in cats[1:-1]] + [f'More than {cats[-2]}']
 tweet_data['nreplies_cats'] = pd.cut(tweet_data.nreplies, cats, labels=labels, include_lowest=True)
 
 graph_data = tweet_data.groupby('nreplies_cats').id.nunique().reset_index()
 graph_data['percentage'] = graph_data.id / graph_data.id.sum()
 
+#from mizani.formatters import percent_format
+
 graph = (
   pd.ggplot(graph_data, pn.aes(x='nreplies_cats', y='percentage')) 
   + pn.geom_col() 
-  + pn.scale_y_continuous(labels=mizani.formatters.percent_format()) 
+  + pn.scale_y_continuous(labels=percent_format()) 
   + pn.coord_flip()
 )
 graph.draw();
@@ -65,14 +67,7 @@ tweet_data['dummy'] = 'Número de likes'
 
 graph = (
 pn.ggplot(tweet_data, pn.aes(x='dummy', y='nlikes'))
-+ pn.geom_boxplot() + pn.xlab('')
-)
-
-graph.draw();
-
-graph = (
-pn.ggplot(tweet_data, pn.aes(x='nlikes'))
-+ pn.geom_density()
++ pn.geom_boxplot() + pn.xlab('') + pn.coord_cartesian(ylim=(0, 1000))
 )
 
 graph.draw();
