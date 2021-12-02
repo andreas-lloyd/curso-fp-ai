@@ -22,14 +22,14 @@ Nota que en la primera mitad del año vamos a centrarnos en la regresión, pero 
 
 1. Cómo impacta la selección del target sobre el modelo? 
 2. Cómo cambiaría la predicción con las diferentes transformaciones?
-3. Si nuestro target se "comporta mal", como afecta al modelo
+3. Si nuestro target se "comporta mal", cómo afecta al modelo?
 
 ## Que esperamos tener?
-Unos candidatos muy claros para nuestro target, listo para poder analizar correlaciones y variables relevantes.
+Unos candidatos muy claros para nuestro target, listos para poder analizar correlaciones y variables relevantes.
 
 ## Ejemplos para arrancar motores
 
-## Número de replies
+### Número de replies
 Las respuestas pueden ser muy interesantes porque muestra un "engagement" muy fuerte - pero es una variable realmente continua?
 
 ```python
@@ -37,6 +37,43 @@ print((tweet_data.nreplies == 0).mean())
 
 # Y esto que significa?
 print(tweet_data.loc[tweet_data.nreplies == 0, ['nlikes', 'nretweets']].describe())
-```
 
+cats = [-1, 0, 1, 5, 50, 500, 5000, 50000, tweet_data.nreplies.max() + 99999]
+labels = [bin_lim for bin_lim in cats[1:-1]] + [f'More than {cats[-2]}']
+tweet_data['nreplies_cats'] = pd.cut(tweet_data.nreplies, cats, labels=labels, include_lowest=True)
+
+graph_data = tweet_data.groupby('nreplies_cats').id.nunique().reset_index()
+graph_data['percentage'] = graph_data.id / graph_data.id.sum()
+
+#from mizani.formatters import percent_format
+
+graph = (
+  pd.ggplot(graph_data, pn.aes(x='nreplies_cats', y='percentage')) 
+  + pn.geom_col() 
+  + pn.scale_y_continuous(labels=percent_format()) 
+  + pn.coord_flip()
+)
+graph.draw();
+```
+Qué pasaria si intentamos una regresion con este target?
+
+Qué otros problemas podemos encontrar?
+
+### Número de likes
+Los likes también parecen interesantes - pero habrán valores extremos?
+
+```python
+tweet_data['dummy'] = 'Número de likes'
+
+graph = (
+pn.ggplot(tweet_data, pn.aes(x='dummy', y='nlikes'))
++ pn.geom_boxplot() + pn.xlab('') + pn.coord_cartesian(ylim=(0, 1000))
+)
+
+graph.draw();
+```
+Cómo podemos interpretar el boxplot?
+
+### Un ratio de valores?
+Cómo seria hacer un ratio de likes por followers? Tendria esto sentido? Que problemas puede haber?
 
