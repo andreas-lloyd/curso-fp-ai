@@ -2,37 +2,44 @@
 Tenemos que encontrar los factores que influyen sobre nuestro target porque estos van a ser las entradas de nuestro modelo.
 
 ## Objetivo
-Entender qué variables tienen poder predicitivo para nuestro target y cómo podemos sacar lo mejor de ellos.
+Entender qué variables tienen poder predictivo para nuestro target y cómo podemos sacar lo mejor de ellos.
 
 ## Contexto
 Entendemos los datos. Tenemos más claro cual va a ser nuestro target (o targets). Ahora tenemos que entender qué variables de nuestros datos van as ser los que queremos utilizar en el modelo y de qué forma queremos utilizarlas.
 
-Algunos dirian que lo mejor es utilizar todas las variables que tenemos disponibles y ya esta, pero esto puede ser peligroso porque:
+Algunos dirían que lo mejor es utilizar todas las variables que tenemos disponibles y ya esta, pero esto puede ser peligroso porque:
 
-* El modelo sera mucho mas dificil de interpretar
-* Hay mucho mas posibilidad de errores y "over fitting"
-* Seguramente algunas variables son utiles, pero solo bajo ciertas transformaciones
+* El modelo sera mucho más difícil de interpretar
+* Hay mucho más posibilidad de errores y "over fitting"
+* Seguramente algunas variables son útiles, pero solo bajo ciertas transformaciones
 
 ## Estrategia
 
 1. Pensar que factores pueden influir sobre nuestro target
-2. Identificarlos en los datos y recordar lo que vimos en el analisis inicial
+2. Identificarlos en los datos y recordar lo que vimos en el análisis inicial
 3. Analizar como varia el target con los factores que hemos elegido
 
 ## Preguntas importantes para guiar
 
 * Que son las variables que probablemente sean las mejores?
+
 * Como se puede determinar que un factor es relevante para predecir el target?
+
 * Como sabemos que son las mejores variables?
-* Que transformacions podemos aplicar para mejorar los resultados?
+
+* Que transformaciones podemos aplicar para mejorar los resultados?
+
 
 ## Que esperamos tener?
-Una vision clara de las variables entrantes a nuestro modelo y las transformaciones que queremos aplicar.
+
+Una visión clara de las variables entrantes a nuestro modelo y las transformaciones que queremos aplicar.
 
 ## Ejemplos para arrancar motores
 
 ### El numero de followers
-Llevamos meses diciendo que los tweets de cuentas con mas followers tendran mas popularidad, pero es cierto?
+
+Llevamos meses diciendo que los tweets de cuentas con más followers tendrán más popularidad, pero es cierto?
+
 ```python
 tweet_data = pd.read_csv(tweet_file)
 twitter_users = pd.read_csv(handles_file)
