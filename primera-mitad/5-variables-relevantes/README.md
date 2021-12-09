@@ -56,6 +56,8 @@ ymax = tweet_data[target].quantile(0.95)
 
 ### Los videos hacen las cosas mas populares? Depende del idioma?
 ```python
+import numpy as np
+
 target = "nreplies"
 variable = "video"
 
@@ -63,6 +65,6 @@ print(tweet_data.groupby(variable)[target].describe())
 
 languages = tweet_data.language.value_counts().index[:6]
 tweet_data["language_reduced"] = np.where(tweet_data.language.isin(languages), tweet_data.language, "others")
-variable = ["language_reduced", "video")
+variable = ["language_reduced", "video"]
 print(tweet_data.groupby(variable)[target].describe())
 ```
