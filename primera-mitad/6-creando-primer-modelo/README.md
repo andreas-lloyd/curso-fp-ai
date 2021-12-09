@@ -15,6 +15,8 @@ Ahora toca lo que hemos venido aqui para hacer: entrenar un modelo. Lo que siemp
 
 Esta parte del proyecto se puede hacer en 5 lineas o en 500, con 2 variables o 100, entrenando 1 modelo o 5 - lo fundamental es que seguimos un proceso correcto que va a permitir una evaluacion a posterior que tenga sentido. Si no tenemos claro mas o menos como de bueno va a ser nuestro modelo con datos nuevos, no contara para nada nuestro esfuerzo.
 
+Esta parte es tan vinculado con la parte de evaluacion que es probable que ya adelantemos parte de la evaluacion (el ultimo paso) para hacer esta parte mejor.
+
 ## Estrategia
 Ahora las cosas son un poco mas simples y roboticos - ya hemos hecho lo dificil en las partes anteriores.
 
