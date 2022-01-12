@@ -18,7 +18,7 @@ Esta parte del proyecto se puede hacer en 5 líneas o en 500, con 2 variables o 
 Esta parte está tan vinculada con la parte de evaluación que es probable que ya adelantamos parte de la evaluación (el último paso) para hacer esta parte mejor.
 
 ## Estrategia
-Ahora las cosas son un poco más simples y robóticos - ya hemos hecho lo difícil en las partes anteriores. Ahora vamos a
+Ahora las cosas son un poco más simples y robóticos - ya hemos hecho lo difícil en las partes anteriores (por esto dicen que crear el modelo es solo 5% del esfuerzo). Ahora vamos a
 
 1. Tener claro qué variables de entrada y el target que queremos para el modelo
 2. Construir los pasos de preparación de datos para que nuestro modelo se puede entrenar (y de la mejor forma)
