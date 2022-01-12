@@ -18,7 +18,7 @@ Esta parte del proyecto se puede hacer en 5 líneas o en 500, con 2 variables o 
 Esta parte está tan vinculada con la parte de evaluación que es probable que ya adelantamos parte de la evaluación (el último paso) para hacer esta parte mejor.
 
 ## Estrategia
-Ahora las cosas son un poco más simples y robóticos - ya hemos hecho lo difícil en las partes anteriores. Ahora vamos a
+Ahora las cosas son un poco más simples y robóticos - ya hemos hecho lo difícil en las partes anteriores (por esto dicen que crear el modelo es solo 5% del esfuerzo). Ahora vamos a
 
 1. Tener claro qué variables de entrada y el target que queremos para el modelo
 2. Construir los pasos de preparación de datos para que nuestro modelo se puede entrenar (y de la mejor forma)
@@ -44,13 +44,22 @@ Unas predicciones que podemos evaluar en la siguiente parte. Necesitamos por lo 
 ```python
 from sklearn.linear_model import LinearRegression
 
-X = [''] # Tu target aqui
-y = [''] # Tus variables aqui
+y = '' # Tu target aqui
+X = ['', ''] # Tus variables aqui
 
-model = LinearRegression()
-model.fit(tweets_data[X], tweets_data[y])
+model = LinearRegression() # Elegir el modelo
+model.fit(tweets_data[X], tweets_data[y]) # Entrenar el modelo
 
-predictions = model.predict(X)
+predictions = model.predict(tweets_data[X]) # Predecir con el modelo
+
+# Miramos a ver que tal...
+tweets_data['predictions'] = predictions
+
+tweets_data['difference'] = (tweets_data[y] - tweets_data.predictions)
+
+print(tweets_data[[y, 'predictions', 'difference']].describe())
+print('\n')
+print(tweets_data[[y, 'predictions', 'difference']].corr())
 ```
 Así de fácil (sólo 6 líneas y lo podríamos haber hecho en 3)! Pero esto es lo minimo de lo mínimo, se puede mejorar el proceso mucho:
 
