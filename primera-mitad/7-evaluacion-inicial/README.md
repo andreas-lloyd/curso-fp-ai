@@ -44,7 +44,7 @@ Una manera objetivo de comprar los modelos que hemos entrenado que nos dan una b
 
 ### Comparar nuestras predicciones con la realidad
 ```python
-graph_data = pd.DataFrame({'realidad' : tweet_data[y], 'predicciones' : predictions})
+graph_data = pd.DataFrame({'realidad' : tweets_data[y], 'predicciones' : predictions})
 
 graph = pn.ggplot(graph_data, pn.aes(x='realidad', y='predicciones')) + pn.geom_point() + pn.geom_smooth(method="lm", color='red')
 graph.draw();
@@ -54,10 +54,10 @@ graph.draw();
 ```python
 from sklearn.metrics import median_absolute_error
 
-tweet_data['baseline'] = tweet_data[y].mean()
+tweets_data['baseline'] = tweets_data[y].mean()
 
-print(median_absolute_error(tweet_data[y], tweet_data['baseline']))
-print(median_absolute_error(tweet_data[y], predictions))
+print(median_absolute_error(tweets_data[y], tweets_data['baseline']))
+print(median_absolute_error(tweets_data[y], predictions))
 
 ```
 Si la diferencia es muy baja, ¿qué quiere decir sobre nuestro modelo?
