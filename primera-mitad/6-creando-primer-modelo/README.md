@@ -44,13 +44,22 @@ Unas predicciones que podemos evaluar en la siguiente parte. Necesitamos por lo 
 ```python
 from sklearn.linear_model import LinearRegression
 
-y = [''] # Tu target aqui
-X = [''] # Tus variables aqui
+y = '' # Tu target aqui
+X = ['', ''] # Tus variables aqui
 
-model = LinearRegression()
-model.fit(tweets_data[X], tweets_data[y])
+model = LinearRegression() # Elegir el modelo
+model.fit(tweets_data[X], tweets_data[y]) # Entrenar el modelo
 
-predictions = model.predict(X)
+predictions = model.predict(tweets_data[X]) # Predecir con el modelo
+
+# Miramos a ver que tal...
+tweets_data['predictions'] = predictions
+
+tweets_data['difference'] = (tweets_data[y] - tweets_data.predictions)
+
+print(tweets_data[[y, 'predictions', 'difference']].describe())
+print('\n')
+print(tweets_data[[y, 'predictions', 'difference']].corr())
 ```
 Así de fácil (sólo 6 líneas y lo podríamos haber hecho en 3)! Pero esto es lo minimo de lo mínimo, se puede mejorar el proceso mucho:
 
