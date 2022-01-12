@@ -18,4 +18,11 @@ Need to do:
 * It would be good to cover the last bit joining the data at the start of the crashcourse - could use it as an example of loading data
 * Need to fix accesses and stuff and publish GitHub link on Moddle
 
-### 11 - 11
+### 01 - 13
+Up until now we have managed to reach the part on choosing variables, and we still have to cover model training and evaluation.
+
+In theory there are 4 sessions left for the first evaluation (unclear if there is a specific deadline).
+
+We will probably have to do a bit of a catch up because people will need to turn back on --> so for the 13th we can review what we have done so far and what choosing variables is about.
+
+Then towards the end of the 13th we can introduce model training and bring it back on the 20th. Then towards the end of the class we can talk about evaluation, re-introducing on the 27th --> and then the last class is a free class.
