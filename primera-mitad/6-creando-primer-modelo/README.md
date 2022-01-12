@@ -44,8 +44,8 @@ Unas predicciones que podemos evaluar en la siguiente parte. Necesitamos por lo 
 ```python
 from sklearn.linear_model import LinearRegression
 
-X = [''] # Tu target aqui
-y = [''] # Tus variables aqui
+y = [''] # Tu target aqui
+X = [''] # Tus variables aqui
 
 model = LinearRegression()
 model.fit(tweets_data[X], tweets_data[y])
