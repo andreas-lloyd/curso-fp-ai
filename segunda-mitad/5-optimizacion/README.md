@@ -5,7 +5,7 @@ Lo primero de todo es entender nuestros datos y los problemas que podemos encont
 Sacar conclusiones sobre la naturaleza de los datos que nos ayudará en la preparación de los datos y entrenamiento de un modelo.
 
 ## Contexto
-...
+Aquí tambien vamos a centrarnos en utilizar diferentes modelos
 
 ## Estrategia
 
