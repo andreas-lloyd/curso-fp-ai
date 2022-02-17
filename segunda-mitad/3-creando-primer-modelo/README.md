@@ -73,9 +73,11 @@ model = LogisticRegression() # Elegir el modelo
 model.fit(tweets_data[X], tweets_data[y]) # Entrenar el modelo
 
 predictions = model.predict(tweets_data[X]) # Predecir con el modelo
+probability = model.predict_proba(tweets_data[X])
 
 # Miramos a ver que tal...
 tweets_data['predictions'] = predictions
+tweets_data['probability'] = probability[:, 1]
 
 tweets_data['correct'] = (tweets_data[y] == tweets_data.predictions)
 
