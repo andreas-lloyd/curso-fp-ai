@@ -37,5 +37,5 @@ Buscamos popularidad - al fin y al cabo no nos importa tanto si un tweet tiene 1
 print(tweets_data.nlikes.quantile([0.5, 0.8, 0.9, 0.95]))
 tweet_data['muchos_likes'] = tweet_data.nlikes >= tweets_data.nlikes.quantile(0.9)
 
-print(tweet_data.groupby('muchos_likes).nlikes.describe())
+print(tweet_data.groupby('muchos_likes').nlikes.describe())
 ```
