@@ -79,5 +79,5 @@ tweets_data['predictions'] = predictions
 
 tweets_data['correct'] = (tweets_data[y] == tweets_data.predictions)
 
-print(tweets_data[[y, 'predictions', 'difference']].describe())
+print(tweets_data[[y, 'predictions', 'correct']].describe())
 ```
