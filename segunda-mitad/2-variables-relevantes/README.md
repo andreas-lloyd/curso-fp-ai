@@ -1,27 +1,27 @@
 # Las variables relevantes
-Ahora tenemos una idea de que targets discretos pueden servir para una clasificacion. Toca entender que variables inluyen sobre nuestros targets.
+Ahora tenemos una idea de los targets discretos que pueden servir para una clasificación. Toca entender qué variables influyen sobre nuestros targets.
 
 ## Objetivo
-Entender que factores inluyen sobre nuestra clasificacion.
+Entender qué factores influyen sobre nuestra clasificación.
 
 ## Contexto
-Otra vez volvemos a un ejercicio similar a uno que hicimos para la regresion. Ahora como los targets son nuevos, toca volver a analizar las variables relevantes. Es muy posible que lo que antes era relevante sigue siendo relevante, pero tenemos cuidado porque:
+Otra vez volvemos a un ejercicio similar a uno que hicimos para la regresión. Ahora como los targets son nuevos, toca volver a analizar las variables relevantes. Es muy posible que lo que antes era relevante sigue siendo relevante, pero tenemos cuidado porque:
 
-* Alguna variable puede ser muy relevante para distinguir entre valores que ahora tienen la misma clasificacion
-* Variables que antes no eran muy utiles ahora pueden serlo
+* Alguna variable puede ser muy relevante para distinguir entre valores que ahora tienen la misma clasificación
+* Variables que antes no eran muy útiles ahora pueden serlo
 * Los outliers en las variables son menos importantes
-* Nuevas transformaciones pueden ser utiles
+* Nuevas transformaciones pueden ser útiles
 
 ## Estrategia
 Realmente vamos a hacer algo similar al ejercicio que hicimos anteriormente.
 
 1. Pensar que factores pueden influir sobre nuestro target - tomando como referencia el ejercicio pasado
-2. Entender si unas transformaciones nuevas pueden ser utiles
-3. Analizar como varia el target con los factores que hemos elegido
+2. Entender si unas transformaciones nuevas pueden ser útiles
+3. Analizar cómo varía el target con los factores que hemos elegido
 
 ## Preguntas importantes para guiar
 
-* Como entendemos lo que es relevante para un target no continuo?
+* ¿Cómo entendemos lo que es relevante para un target no continuo?
 
 ## Que esperamos tener?
 Una visión clara de las variables entrantes a nuestro modelo y las transformaciones que queremos aplicar.
@@ -29,7 +29,7 @@ Una visión clara de las variables entrantes a nuestro modelo y las transformaci
 ## Ejemplos para arrancar motores
 
 ### Followers
-El numero de followers era importante antes pero sufria de un problema de outliers - sigue siendo igual?
+El número de followers era importante antes pero sufría de un problema de outliers - sigue siendo igual?
 
 ```python
 graph = (
