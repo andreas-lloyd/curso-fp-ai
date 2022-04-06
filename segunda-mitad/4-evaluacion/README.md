@@ -96,7 +96,7 @@ Un resumen de la bondad de nuestros modelos y unas mejoras para hacer (o ahora o
 
 ```python
 from sklearn.metrics import roc_auc_score
-probability = model.predict_proba(X) # predecimos probabilidades para algún y verdadero
+probability = model.predict_proba(X)[:,1]
 score = roc_auc_score(y, probability)
 ```
 
@@ -147,6 +147,7 @@ from matplotlib import pyplot as plt
 
 feature_names = X.columns
 
+# Hace falta un modelo de tipo "decision tree"
 plt.figure(figsize=(25, 12))
 sklearn.tree.plot_tree(
     tree_model, fontsize=12, feature_names=feature_names, class_names=['No es popular', 'Es popular'], max_depth=4, 
