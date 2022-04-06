@@ -44,7 +44,14 @@ Otra cosa que podemos hacer es hacer una simulación financiera de los diferente
 Normalmente nos equivocamos un poco más y acertamos un poco menos que un humano - pero los humanos tardan muchísimo más tiempo en completar la tarea (potencialmente x1000 veces) y entonces acabamos ahorrando mucho dinero. Por este motivo en el sur de EEUU utilizan humanos para recoger fruta y utilizan máquinas en el norte (según Reddit).
 
 ##### Top X
-En algunos problemas también puede tener sentido hacer evaluaciones de los "top X" predicciones. Por ejemplo - si vamos a escribir contenido para contestar a ciertos Tweets, no nos interesa que acertemos en todos los Tweets (no podemos escribir contenido para todo) - pero sí que nos interesa mucho que los 10 Tweets que pensamos que van a ser más populares realmente sean populares. Entonces podríamos calcular el accuracy entre los primeros 10 Tweets que más probabilidad tengan.
+En algunos problemas también puede tener sentido hacer evaluaciones de los "top X" predicciones. Por ejemplo - si vamos a escribir contenido para contestar a ciertos Tweets, no nos interesa que acertemos en todos los Tweets (no podemos escribir contenido para todo) - pero sí que nos interesa mucho que los 10 Tweets que pensamos que van a ser más populares realmente sean populares. Entonces podríamos calcular el accuracy entre los primeros 10 Tweets que más probabilidad tengan. 
+
+#### Optimizando el umbral
+Hemos estado hablando de varias formas de evaluar las predicciones, trabajando con la probabilidad. Un punto sutil pero muy importante es que **después de evaluar y elegir nuestro modelo favorito, siempre debemos especificar un umbral para nuestras probabilidades y evaluar la predicción final con este umbral**. 
+
+Es decir, podemos pasar toda la evaluación mirando solo la probabilidad, pero cuando entregamos el trabajo al cliente, no podemos decir "toma, unas probabilidades muy bien predichas" - debemos decir "a partir de X% tienes que hacer...". Y claro, en este contexto, debemos también incluir una evaluación final de las "decisiones" que hacemos con tal umbral (por ejemplo, el accuracy, el recall etc.). 
+
+En general lo que hacemos es elegir el umbral que saca las mejores métricas en el contexto de futuras decisiones (tipo, yo elijo un umbral de 70% y no 50% porque mi recall es mejor...).
 
 ### Overfitting
 El otro aspecto fundamental de la evaluación es detectar y limitar el overfitting. Overfitting es cuando nuestro modelo "aprende demasiado" de unos datos y las predicciones que hace no se generalizan a los datos exteriores. Es como si estuviera memorizando los patrones exactos de los datos en vez de aprender el patrón general.
