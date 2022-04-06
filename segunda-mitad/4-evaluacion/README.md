@@ -60,6 +60,18 @@ Es un tema muy amplio pero tiene mucho peligro con los modelos más "flexibles" 
 
 La señal más estándar de que no vamos a generalizar es que las métricas cambian mucho entre training / validación / test. Por eso es muy importante dividir los datos.
 
+### Predicciones multiclase
+Muchos han elegido utilizar un target con varias clases. Esto es algo muy interesante! Lo único "malo" es que hay que trabajar un poco más a la hora de evaluar porque para cada clase vamos a tener una matriz de confusión entera!
+
+Como es especialmente interesante estudiar la curva ROC, unos comentarios:
+
+* Aqui hay [cosas intersantes](https://stackoverflow.com/questions/45332410/roc-for-multiclass-classification) sobre como evaluar ejemplos multiclase
+* La documentacion de scitkit-learn tambien tiene [unos ejemplos interesantes](https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html)
+* El AUC se puede calcular utilizando diferentes técnicas de medias:
+    * Coger la media de AUC si consideramos que una predicción es acertada o no (convertirlo en pseudo-binario)
+    * Coger la media de AUC de todas las posibles "parejas" de predicciones
+* En general vamosa  tener peores métricas cuando es multiclase porque hay más opciones - puede ser útil centrarnos en la clase que vemos más importante
+
 ### Entender dónde están los problemas
 Hasta ahora hemos descrito una evaluación muy generalista, pero parte de la evaluación también es entender dónde están nuestros problemas y donde podemos mejorar. Esto puede tomar varias formas, por ejemplo:
 
