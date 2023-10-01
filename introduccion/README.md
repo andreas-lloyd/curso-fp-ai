@@ -1,72 +1,39 @@
-# Introducción al curso
-Bienvenidos a mi parte del curso! Vamos a pasar unas cuantas semanas juntos mirando muchos temas relacionados con el mundo de data science, machine learning y inteligencia artificial.
+# Introducción
 
-## Objetivos del curso
-Mi objetivo principal es daros experiencia de cómo puede ser aplicar los temas teóricos en un problema real.
+## Quién soy yo?
 
-Todos los proyectos presentan problemas distintos, pero hay cosas en común y es muy útil ganar experiencia para ver como solventar estos problemas.
+* Nacido en Noruega (madre noruega y padre británico), estudiado física
+* Data scientist durante ~6 años, ahora product manager
+* Muy fan de (1) la aplicación de los datos en el mundo real para generar impacto (2) aprender (3) debatir cosas
+* Muy no-fan de (1) mucha teoría sin valor / impacto real (2) actitud negativo (3) ineficiencia
+* Sorrry for my espanish
 
-Más específicamente:
+## Formato del curso
 
-* Cómo acercarnos a resolver problemas de negocio con datos
-* Entender a qué nos referimos cuando hablamos del concepto de “datos” en problemas de data science y machine learning 
-* Ver el proceso típico de aprender sobre nuestro problema para conseguir formular el problema de negocio en un problema técnico
-* Entrenar y evaluar modelos (más en la segunda parte del año)
-* Mejorar estos modelos de formas sencillas y complejas
+* El año se divide en 2 ejercicios con 2 objetivos y 2 conjuntos de datos diferentes
+* Cada ejercicio se evaluara con un examen y un proyecto
+* El primer ejercicio sera bastante dirigido y el segundo mucho menos, pero ambos tienen el mismo formato
+* El objetivo es aprender - no sacar una nota arbitraria ni rellenar huecos con respuestas correctas
+* El objetivo del aprendizaje es aprender como funciona la creación de modelos en el mundo real - no en el mundo teórico
 
-## Qué esperamos conseguir
-Los skills principales que esperamos ganar son:
+### El examen
 
-* Analizar datos
-* Entender datos y resultados en el contexto de un problema de negocio
-* Programación básica del mundo de data science y ML
-* Los procesos típicos de un problema de ML
+* No tengáis miedo
+* Preguntas similares a las preguntas del proyecto - unos datos, pedimos que se haga "algo" y luego comentar sobre lo que has hecho
 
-## Nuestro proyecto
-Vamos a imaginar que trabajamos para una empresa que quiere crecer su base de usuarios. Imaginamos también que hemos identificado Twitter como una posible fuente de usuarios.
+### Cambios que hemos hecho
 
-Hemos visto que la clave es la creación de contenidos buenos (no spam!) y compartirlo sobre tweets populares cuando antes después de la publicación del tweet. Por ejemplo, si Obama habla sobre cómo el deporte afecta el desarrollo de niños - compartir un artículo que profundiza sobre este tema en los comentarios podría traernos muchos usuarios.
+* Añadir examen: evaluar conocimiento en otro contexto y ayudar al alumno apreciar ciertas lecciones en un contexto más controlado
+* 2 ejercicios (en vez de 1): un contexto más claro para los 2 objetivos que tenemos
+* 1 ejercicio más dirigido: cuesta arrancar y asi el estándar para un ámbito más "libre" está más claro
 
-Ahí la empresa nos ha pedido ayuda - cómo podemos predecir los tweets que van a ser populares?
+## Consejos
 
-Entonces nuestro trabajo es poder proporcionar inteligencia (de alguna forma) sobre qué tweets podrán llegar a ser “populares” y válidos para nuestra estrategia.
-
-* Algunas ideas iniciales de cómo hacer esto?
-* ¿Cómo diferenciar nuestro intento de ayudar con este problema frente a otro tipo de perfil, por ejemplo alguien de marketing o de investigación cualitativa?
-* ¿Cómo sabremos que hemos conseguido hacer algo útil? 
-
-## Cómo vamos a hacer las clases
-Cada semana / par de semanas trabajaremos en un tema específico. Yo voy a dejar unas pistas y unos trocitos de código que podemos ir utilizando si queremos. Durante la clase vamos a ir trabajando en el tema de la semana.
-
-Un ejemplo sería “explorar los datos” - no voy a hacer una exploración enorme antes de la clase, pero voy a daros un punto de partida. 
-
-Es difícil cubrir todos los aspectos de data science, ML y AI con un único dataset, así que a veces vamos a introducir limitaciones a lo que podemos hacer simplemente para aprender que hacer un algunas situaciones (por ejemplo, no permitir entrenar un modelo con ciertas variables, etc.)
-
-## Evaluación
-En vez de tener un examen, preferimos evaluar un proyecto hecho por vosotros. El proyecto que vamos a evaluar es el mismo que vamos a hacer durante estas clases:
-
-* En la primera mitad del año vamos a llegar a hacer unos modelos de regresión y evaluaremos a todo el trabajo que involucra crear estos modelos (el análisis inicial de los datos, preparación de los datos, mejora de los datos para el modelo y la misma creación del modelo)
-* En la segunda mitad profundizaremos más sobre la evaluación de los modelos y también la creación de modelos de clasificación - para la evaluación habrá solape con la primera mitad (todo lo que tiene más que ver con los pasos previos de entrenar un modelo) pero daremos más peso a la parte de evaluación y optimización de los modelos
-
-Lo importante del proyecto NO es crear el mejor modelo de la historia. Lo importante es la ejecución del proceso entero, lo que aprendemos sobre el problema durante este proceso y la justificaciones de las decisiones que tomamos.
-
-El último punto es muy importante: hay muchas decisiones que tendremos que tomar y lo importante es justificar bien estas decisiones. Da un poco igual si utilizamos variable A o variable B, pero es importante razonarlo (usar nuestro sentido común también nos vale!).
-
-Este ejercicio es muy similar a lo que acaba siendo la "prueba técnica" en el proceso de selección para trabajos de data science (y relacionados). Puedo compartir algunos ejemplos en persona.
-
-También trataré de dejar algunos puntos importantes para cada tema para que tengáis idea de donde enfocar más.
-
-## Requisitos tecnicos
-Vamos a hacer todo el curso en Python, generalmente explotando Jupyter notebooks en Jupyter lab. Yo siempre tiro de Jupyer lab pero una alternativa muy buena es [Google colab](https://colab.research.google.com/) - no hace falta instalar nada y el procesamiento es en remoto, una ventaja muy grande!
-
-En términos de librerías, vamos a estar utilizando principalmente:
-
-* Pandas (muchísimo!)
-* Plotnine (bastante)
-* Scikit-learn (bastante)
-* Numpy (algo)
-
-Aunque el objetivo del curso NO es aprender a programar ni nada de este estilo - es necesario saber algo y vamos a aprender mucho de estas tecnologías de paso.
-
-### Por que no usamos R/Java/Stata/SPSS/Excel/Spark/Julia/C…?
-La tecnología no es lo importante. Python es muy común en este mundo ya que es un lenguaje muy flexible - una ventaja enorme. Si prefieres usar otra cosa, adelante! R y Julia son muy buenas alternativas. Si alguien quiere utilizar R, puedo ayudar a nivel técnico también.
+* Si no entiendes algo - pregúntalo - soy muy simpático y no juzgo (claridad > comodidad!)
+* Ayudaros entre todos
+* La creación de modelos es lleno de decisiones sin respuestas correctas - lo importante es razonas tus decisiones a través de los datos
+* Los datos y los modelos existen para representar algo en el mundo real - utiliza tu sentido común y conocimiento previo para todo, y siempre tener claro lo que estás intentando conseguir en el mundo real
+* Es mucho, mucho mejor tener una solución *simple* terminada y funcionando correctamente que perderte en crear algo súper avanzado
+  * Empieza por lo simple, anotando las complejidades que podríamos añadir
+  * Teniendo un modelo funcionando, podemos estimar el beneficio que nos trae más complejidad
+  * Más complejidad también implica una solución más difícil de implementar y usar en el mundo real
