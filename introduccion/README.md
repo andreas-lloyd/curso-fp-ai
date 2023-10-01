@@ -33,3 +33,7 @@
 * Ayudaros entre todos
 * La creación de modelos es lleno de decisiones sin respuestas correctas - lo importante es razonas tus decisiones a través de los datos
 * Los datos y los modelos existen para representar algo en el mundo real - utiliza tu sentido común y conocimiento previo para todo, y siempre tener claro lo que estás intentando conseguir en el mundo real
+* Es mucho, mucho mejor tener una solución *simple* terminada y funcionando correctamente que perderte en crear algo súper avanzado
+  * Empieza por lo simple, anotando las complejidades que podríamos añadir
+  * Teniendo un modelo funcionando, podemos estimar el beneficio que nos trae más complejidad
+  * Más complejidad también implica una solución más difícil de implementar y usar en el mundo real
