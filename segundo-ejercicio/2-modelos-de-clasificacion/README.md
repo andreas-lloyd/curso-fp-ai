@@ -1,14 +1,10 @@
-# Creando el primer modelo
-Vamos muy rápido y ya tenemos nuestro target. Como antes, vamos a entrenar nuestros primeros modelos para empezar ya la evaluación y todo lo que viene después.
-
-## Objetivo
-Tener unas primeras predicciones de unos modelos iniciales.
+# Modelos de clasificación
 
 ## Contexto
-En esta parte del curso queremos centrarnos en temas más avanzados como la evaluación y optimización. Para llegar a este punto es importante tener un baseline de modelos para ir tirando. Ya hemos investigado las variables y targets, así que estamos listos para entrenar modelos.
+En esta parte del curso queremos centrarnos en temas más avanzados como la evaluación y optimización. Para llegar a este punto es importante tener un baseline de modelos para ir tirando. Una vez hemos investigado las variables y targets, estaremos listos para entrenar modelos.
 
 ### Probabilidad vs. target final
-Realmente no hay mucha diferencia entrenando un modelo para clasificación que para regresión así que el código y los conceptos importantes son iguales. La diferencia más importante es que ahora podemos predecir un valor final o una probabilidad:
+Realmente no hay mucha diferencia entre el entrenamiento de un modelo de clasificación y de regresión así que el código y los conceptos importantes son iguales. La diferencia más importante es que ahora podemos predecir un valor final o una probabilidad:
 
 * Predecir la probabilidad es justo esto - la probabilidad de que nuestro evento ocurre
 * Muchas veces una probabilidad no es lo más útil y tenemos que "decidir" si nuestro evento va a ocurrir - esto lo hacemos fijando un umbral en la probabilidad: si la probabilidad es mayor que X, yo creo que el evento va a ocurrir
@@ -17,19 +13,19 @@ Realmente no hay mucha diferencia entrenando un modelo para clasificación que p
 En general es más útil predecir la probabilidad por varios motivos:
 
 * Siempre puedes fijar un umbral de 50% y recuperar la "predicción final" que te habría dado el modelo
-* En general, no siempre vas a querer utilizar el 50% (¿Cruzarias la calle si tuvieras un 49.99% de probabilidad de ser atropellado? ¿Jugarías a la lotería si tuvieras una probabilidad de 10% de ganar?)
+* En general, no siempre vas a querer utilizar el 50% (¿Cruzarias la calle si tuvieras un 49.99% de probabilidad de no ser atropellado? ¿Jugarías a la lotería si tuvieras una probabilidad de 10% de ganar?)
 * Una evaluación completa va a tener en cuenta tanto las predicciones finales como las probabilidades - es peor equivocarse prediciendo una probabilidad de 99% o de 51%?
 
 Aquí hay un tema avanzado de "predecir" vs. "decidir" - los modelos están diseñados y creados para predecir bien, no para tomar decisiones!
 
 Otros puntos importantes a tener en cuenta:
 
-* Si la mayoria de tus datos tienen un valor del target (por ejemplo 99% False y 1% True) tienes un problema "desequilibrado" y estás casi obligado a utilizar la probabilidad, porque muy pocas veces vas a tener un valor por encima de 50% (ejemplo de la lotería...)
+* Si la mayoría de tus datos tienen un valor del target (por ejemplo 99% False y 1% True) tienes un problema "desequilibrado" y estás casi obligado a utilizar la probabilidad, porque muy pocas veces vas a tener un valor por encima de 50% (ejemplo de la lotería...)
 * Ciertos modelos predicen una probabilidad más "real" que otros - árboles de decisión, por ejemplo, no predicen una probabilidad real, mientras una regresión logística sí
 * Si tenemos un problema "multiclase" también existen probabilidades! La predicción final suele ser o la clase que más probabilidad tiene, o la que más tiene si tiene más probabilidad del umbral (que pueden ser distintos para cada clase - o quizás ninguna clase llega a tener bastante probabilidad y predecimos "nulo")
 
 ### Modelos más poderosos
-Ahora somos casi expertos en cómo entrenar modelos, así que vamos a dejar un poco más de margen para explorar modelos más poderosos. Para clasificación unos ejemplos muy típicos de modelos que se utilizan son:
+Ahora somos casi expertos entrenando modelos, así que vamos a dejar un poco más de margen para explorar modelos más poderosos. Para clasificación unos ejemplos muy típicos de modelos que se utilizan son:
 
 * Regresión logística - el modelo más clásico para este tipo de problema
 * Modelos de arboles - un mundo entero de muchos modelos que se basan en los [arboles de decision](https://scikit-learn.org/stable/modules/tree.html) utilizando tecnicas de "[ensembling](https://scikit-learn.org/stable/modules/ensemble.html)"

@@ -7,7 +7,7 @@ Entender cómo podemos incorporar variables más complejas en nuestros modelos.
 ## Contexto
 Hay algunas variables que podemos utilizar en nuestros modelos que tienen más poder que una variable normal. Ejemplos de estos tipos de variables son:
 
-* Conteos de actividad historico de usuarios
+* Conteos de actividad histórico de usuarios
 * Análisis del contexto de un ejemplo
 * Técnicas de reducción de dimensiones y / o clustering
 * Análisis de texto e imágenes
@@ -36,7 +36,7 @@ Pero tenemos que tener mucho cuidado a la hora de evaluar nuestro modelo:
 * Puede ser difícil construir nuestras variables en el conjunto de validación y test (no podemos utilizar ejemplos del futuro para calcular las variables!)
 * Si nos basamos enteramente en el pasado de un actor, no vamos a saber actuar frente a un actor nuevo
 * Si unos pocos actores se repiten mucho, es posible que nuestro modelo aprenderá a detectar los actores en vez de aprender el comportamiento
-* Siempre vamos a tener unos ejemplos sin historico y tenemos que tener cuidado con el motivo de no tener datos (estamos recogiendo toda la actividad de un cliente desde su registración, o simplemente cortando una query de SQL?)
+* Siempre vamos a tener unos ejemplos sin histórico y tenemos que tener cuidado con el motivo de no tener datos (estamos recogiendo toda la actividad de un cliente desde su registración, o simplemente cortando una query de SQL?)
 
 ### Análisis del contexto
 De forma similar a analizar el pasado, podemos analizar el presente en ejemplos similares. Es efectivamente lo mismo, pero analizando el pasado (seguramente más reciente) de los otros actores en el conjunto de datos.

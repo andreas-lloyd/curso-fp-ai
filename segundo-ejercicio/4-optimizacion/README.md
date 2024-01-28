@@ -14,7 +14,7 @@ Siempre hay que considerar que no es fácil decir exactamente qué modelo es "me
 * ¿Qué modelo es más fácil de interpretar?
 * ¿Qué modelo saca las mejores métricas?
 * ¿Qué modelo entendemos mejor?
-* Que modelo sera mas facil de implementar?
+* Que modelo sera mas fácil de implementar?
 * ¿Qué modelo es más fácil de debuggear y modificar?
 
 No todas las respuestas van a ser 100% objetivas y cuando menos objetivo, más difícil va a ser automatizar y organizarnos.
